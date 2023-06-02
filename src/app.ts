@@ -29,7 +29,7 @@ console.log(isOld)  *///we still can get the value "true", because var works on 
 
 console.log(add(2, 5)); */
 
-const add = (a: number, b: number) =>  a + b; //arrow function even shorter
+/* const add = (a: number, b: number) =>  a + b; //arrow function even shorter
 
 
 console.log(add(2, 5));
@@ -42,4 +42,46 @@ const button = document.querySelector('button');
 
 if (button){
     button.addEventListener('click', event => console.log(event))
+} */
+
+//spread operator in arrays
+const hobbies = ['Sports', 'Cooking'];
+const activeHobbies = ['Hiking'];
+
+activeHobbies.push(...hobbies) //tells JS to pull out all the elements of the array and pass them to activeHobbies array
+
+//spread operator in objects
+const person = {
+    name: 'Max',
+    age: 30
+};
+
+const copiedPerson = {...person} //we got a perfect copy of the object (the keys from 'person' object)
+
+const add = (...numbers: number[]) => {//rest parameters should be used when we don't know how many parameters we will use, '...' means that the function can receive a couple of arguments
+    numbers.reduce((curResult, curValue)=>{
+        return curResult + curValue;
+    }, 0)
+
+
+    //could be done with for loop
+    /* let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+      sum += numbers[i];
+    }
+    return sum; */
+
+
+
 }
+
+const addedNumbers = add(5, 10, 2, 3.7)
+console.log(addedNumbers)
+
+
+
+
+
+
+
+
