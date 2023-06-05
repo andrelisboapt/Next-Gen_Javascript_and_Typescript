@@ -1,10 +1,10 @@
-const userName = 'Max'; //this is constant so we can't change this value
+/* const userName = 'Max'; //this is constant so we can't change this value */
 //userName = 'Maximilian';
 
-let age = 30; //this is variable that can be changed
+/* let age = 30; //this is variable that can be changed
 
 age = 29; 
-
+ */
 /* function add(a: number, b: number){
     let result;
     result = a + b;
@@ -52,14 +52,14 @@ activeHobbies.push(...hobbies) //tells JS to pull out all the elements of the ar
 
 //spread operator in objects
 const person = {
-    name: 'Max',
+    firstName: 'Max',
     age: 30
 };
 
 const copiedPerson = {...person} //we got a perfect copy of the object (the keys from 'person' object)
 
 const add = (...numbers: number[]) => {//rest parameters should be used when we don't know how many parameters we will use, '...' means that the function can receive a couple of arguments
-    numbers.reduce((curResult, curValue)=>{
+   return numbers.reduce((curResult, curValue)=>{
         return curResult + curValue;
     }, 0)
 
@@ -80,8 +80,18 @@ console.log(addedNumbers)
 
 
 
+/* const hobby1 = hobbies[0]
+const hobby2 = hobbies[1] */
 
+//instead of doing this, we could just destructure the array hobbies
 
+const [hobby1, hobby2, ...remainingHobbies] = hobbies; //remember that destructuring an array, we have to follow his order (index)
 
+console.log(hobbies, hobby1, hobby2);
+
+const { firstName: userName, age } = person; //destructuring an object, there's no order, just key-values and those will be new variables with there values.
+//here "userName" overwrite firstName variable (new name)
+
+console.log(userName, age, person)
 
 
